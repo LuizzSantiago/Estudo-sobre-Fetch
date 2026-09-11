@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PokeFinder | Estudo de Fetch</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header>
+		<div class="topbar"><div class="brand">PokeFinder / fetch lab</div><div>PokéAPI</div></div>
+		<p class="eyebrow">Estudo intermediário</p>
+		<h1>Encontre seu próximo Pokémon.</h1>
+		<p class="intro">Uma pequena interface para praticar requisições, estados de carregamento, erros, filtros e paginação.</p>
+	</header>
+
+	<main>
+		<form class="toolbar" id="search-form">
+			<input id="search-input" type="search" placeholder="Busque por nome, como pikachu..." autocomplete="off">
+			<button type="submit">Buscar</button>
+			<button class="clear-button" id="clear-button" type="button">Limpar</button>
+			<button class="favorites-button" id="favorites-button" type="button">Favoritos <span id="favorites-count">0</span></button>
+		</form>
+
+		<div class="status-row">
+			<div id="status" aria-live="polite">Carregando Pokémon...</div>
+			<div id="result-count"></div>
+		</div>
+		<div id="error-area"></div>
+		<section class="grid" id="pokemon-grid" aria-live="polite"></section>
+		<nav class="pagination" aria-label="Paginação">
+			<button id="previous-button" type="button">Anterior</button>
+			<span id="page-label">Página 1</span>
+			<button id="next-button" type="button">Próxima</button>
+		</nav>
+	</main>
+
+	<div class="modal" id="details-modal" hidden>
+		<div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="details-title">
+			<button class="modal-close" id="modal-close" type="button" aria-label="Fechar detalhes">&times;</button>
+			<div id="pokemon-details"></div>
+		</div>
+	</div>
+
+	<script src="js/app.js"></script>
+</body>
+</html>
